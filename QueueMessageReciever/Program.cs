@@ -10,10 +10,9 @@ namespace QueueMessageReciever
 {
     class Program
     {
-        public const string connectionstring = "Endpoint=sb://techdiksha.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=WPzEzTSF4UG65nZW0rWsXlTIbokRMGy7UZtJf0CKSns=";
-        public const string queueName = "TechQueue";
-        static QueueClient queueClient;
-        
+        public const string connectionstring = "<Connection string>";
+        public const string queueName = "<Queue Name>";
+        static QueueClient queueClient;        
 
         static void Main(string[] args)
         {

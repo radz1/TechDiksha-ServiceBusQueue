@@ -8,8 +8,8 @@ namespace QueueSample
 {
     public class Program
     {
-        public const string connectionstring = "Endpoint=sb://techdiksha.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=WPzEzTSF4UG65nZW0rWsXlTIbokRMGy7UZtJf0CKSns=";
-        public const string queueName = "TechQueue";
+        public const string connectionstring = "<Connection string of service bus>";
+        public const string queueName = "<Name of the queue>";
         static QueueClient queueClient;
 
         static void Main(string[] args)
@@ -20,6 +20,7 @@ namespace QueueSample
 
         static async Task MainAsync()
         {
+            //Creating Client for the Queue.
             queueClient = new QueueClient(connectionstring, queueName);
             await SendMessageToQueue();
             await queueClient.CloseAsync();
@@ -33,7 +34,7 @@ namespace QueueSample
                 string messageBody = $"Message {i}";
                 var message = new Message(Encoding.UTF8.GetBytes(messageBody));
 
-                // Write the body of the message to the console.
+                // Write the body of the message to the console which is to be send to queue.
                 Console.WriteLine($"Sending message: {messageBody}");
 
                 // Send the message to the queue.
